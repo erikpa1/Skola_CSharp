@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CatPrikaz": {
+      "commandName": "Project",
+      "commandLineArgs": "-n Example.txt Code.txt"
+    }
+  }
+}

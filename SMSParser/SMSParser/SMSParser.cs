@@ -19,6 +19,7 @@ namespace SMSParser
                 Console.WriteLine("Not parsing because of null");
                 return "";
             }
+
             if (stringToParse == String.Empty)
             {
                 Console.WriteLine("Nop parsing because of empty");
@@ -36,6 +37,11 @@ namespace SMSParser
                 else
                 {
                     if (Char.IsUpper(s))
+                    {
+                        concatedString += " ";
+                        concatedString += s;
+                    }
+                    else if (s == ',')
                     {
                         concatedString += " ";
                         concatedString += s;

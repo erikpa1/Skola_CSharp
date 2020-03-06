@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SMSParser": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Hello.World,meErikHere!\""
+    }
+  }
+}
