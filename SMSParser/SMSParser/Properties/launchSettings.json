@@ -2,7 +2,7 @@
   "profiles": {
     "SMSParser": {
       "commandName": "Project",
-      "commandLineArgs": "\"Hello.World,meErikHere!\""
+      "commandLineArgs": "-i TextInput.txt -o OutputFile.txt"
     }
   }
 }
