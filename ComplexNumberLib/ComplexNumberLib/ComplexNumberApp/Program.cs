@@ -45,17 +45,17 @@ namespace ComplexNumberApp
             }
             if (Double.TryParse(args[1], out index2) == false)
             {
-                Console.Error.WriteLine("Argument {1} is not number", args[1]);
+                Console.Error.WriteLine("Argument {0} is not number", args[1]);
                 Environment.Exit(0);
             }
             if (Double.TryParse(args[2], out index3) == false)
             {
-                Console.Error.WriteLine("Argument {2} is not number", args[2]);
+                Console.Error.WriteLine("Argument {0} is not number", args[2]);
                 Environment.Exit(0);
             }
             if (Double.TryParse(args[3], out index4) == false)
             {
-                Console.Error.WriteLine("Argument {3} is not number", args[3]);
+                Console.Error.WriteLine("Argument {0} is not number", args[3]);
                 Environment.Exit(0);
             }
 
@@ -63,11 +63,13 @@ namespace ComplexNumberApp
             var y = new ComplexNumber(index3, index4);
 
             Console.WriteLine("x:");
+            Console.WriteLine("Magnitude of x: " + x.GetMagnitude());
             Console.WriteLine("\t Geometric form:" + x.ToString(ComplexNumberFormat.GeometricForm));
             Console.WriteLine("\t Algebraic form:" + x.ToString(ComplexNumberFormat.AlgebraicForm));
             Console.WriteLine("\t Trigonometric form:" + x.ToString(ComplexNumberFormat.TrigonometricForm));
 
             Console.WriteLine("y:");
+            Console.WriteLine("Magnitude of y: " + y.GetMagnitude());
             Console.WriteLine("\t Geometric form:" + y.ToString(ComplexNumberFormat.GeometricForm));
             Console.WriteLine("\t Algebraic form:" + y.ToString(ComplexNumberFormat.AlgebraicForm));
             Console.WriteLine("\t Trigonometric form:" + y.ToString(ComplexNumberFormat.TrigonometricForm));

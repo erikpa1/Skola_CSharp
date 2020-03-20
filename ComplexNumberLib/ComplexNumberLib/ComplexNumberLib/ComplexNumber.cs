@@ -28,11 +28,13 @@ namespace ComplexNumberLib
         {
             _real = real;
             _imaginary = 0;
+            _magnitude = _real;
         }
         public ComplexNumber(double real, double imaginary)
         {
             _real = real;
             _imaginary = imaginary;
+            _magnitude = Math.Sqrt(Math.Pow(_real, 2) + Math.Pow(_imaginary, 2));
         }
 
         public string ToString(ComplexNumberFormat format)
@@ -54,10 +56,15 @@ namespace ComplexNumberLib
             }
             else if (format == ComplexNumberFormat.TrigonometricForm)
             {
-                //TODO1
+                return _magnitude + " * (cos" + GetAngleString(_real) + " + " + GetAngleString(_imaginary) + "i)";  
             }
 
             return "Error";
+        }
+
+        private String GetAngleString(double b)
+        {
+            return Math.Asin(b/_magnitude).ToString("N4");
         }
 
         public override string ToString()
@@ -91,7 +98,10 @@ namespace ComplexNumberLib
             return false;
         }
 
-
+        public double GetMagnitude()
+        {
+            return _magnitude;
+        }
 
 
         public static ComplexNumber Add(ComplexNumber left, ComplexNumber right)
@@ -131,7 +141,9 @@ namespace ComplexNumberLib
 
         public static ComplexNumber operator /(ComplexNumber left, ComplexNumber right)
         {
-            return new ComplexNumber(left._real / right._real, left._imaginary / right._imaginary);
+            
+            return new ComplexNumber((left._real * right._real + left._imaginary + right._imaginary) / (Math.Pow(right._real, 2) + Math.Pow(right._imaginary, 2)),
+                (left._imaginary * right._real - left._real * right._imaginary) / (Math.Pow(right._real, 2) + Math.Pow(right._imaginary, 2)));
         }
 
         public static bool operator ==(ComplexNumber left, ComplexNumber right)
