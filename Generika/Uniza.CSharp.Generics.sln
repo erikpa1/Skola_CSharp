@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uniza.CSharp.Generics", "Uniza.CSharp.Generics\Uniza.CSharp.Generics.csproj", "{FDBA0E4F-0EE8-4856-88BB-E0E592B1D692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uniza.CSharp.Generics.App", "Uniza.CSharp.Generics.App\Uniza.CSharp.Generics.App.csproj", "{F06FBAAB-3C85-41DF-8D7B-E5D4A9C5AC69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDBA0E4F-0EE8-4856-88BB-E0E592B1D692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDBA0E4F-0EE8-4856-88BB-E0E592B1D692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDBA0E4F-0EE8-4856-88BB-E0E592B1D692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDBA0E4F-0EE8-4856-88BB-E0E592B1D692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06FBAAB-3C85-41DF-8D7B-E5D4A9C5AC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06FBAAB-3C85-41DF-8D7B-E5D4A9C5AC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06FBAAB-3C85-41DF-8D7B-E5D4A9C5AC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06FBAAB-3C85-41DF-8D7B-E5D4A9C5AC69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2648CA05-4926-4C07-932F-3A59A8FE2E96}
+	EndGlobalSection
+EndGlobal
