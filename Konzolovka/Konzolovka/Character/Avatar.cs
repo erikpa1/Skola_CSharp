@@ -8,18 +8,18 @@ namespace Konzolovka.Character
     {
         private Inventory _inventory;
 
-        private Item _item_Head;
-        private Item _item_Neck;
-        private Item _item_Chest;
-        private Item _item_Gloves;
-        private Item _item_Wrists;
-        private Item _item_Belt;
-        private Item _item_Legs;
-        private Item _item_Boots;
-        private Item _item_Ring_Left;
-        private Item _item_Ring_Right;
-        private Item _item_Weapon_Left;
-        private Item _item_Weapon_Right;
+        private Slot<Item> _item_Head;
+        private Slot<Item> _item_Neck;
+        private Slot<Item> _item_Chest;
+        private Slot<Item> _item_Gloves;
+        private Slot<Item> _item_Wrists;
+        private Slot<Item> _item_Belt;
+        private Slot<Item> _item_Legs;
+        private Slot<Item> _item_Boots;
+        private Slot<Item> _item_Ring_Left;
+        private Slot<Item> _item_Ring_Right;
+        private Slot<Item> _item_Weapon_Left;
+        private Slot<Item> _item_Weapon_Right;
 
         public Avatar()
         {

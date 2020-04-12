@@ -6,11 +6,19 @@ namespace Konzolovka.Character
 {
     class Slot<T>
     {
-        private T _item;
+        private T _item = default(T);
+
+        Delegate _onItemAdded = null;
+        Delegate _onItemRemoved = null;
 
         public Slot()
         {
-            _item = default(T);            
+                     
+        }
+
+        public Slot(T item)
+        {
+            SetItem(item);
         }
                
         bool HasObject()
@@ -28,6 +36,23 @@ namespace Konzolovka.Character
             {
                 _item = item;
             }
+
+            if (_onItemAdded != null)
+            {
+
+            }
+        }
+
+        void RemoveItem(T item)
+        {
+            T tmpItem = _item;
+            _item = default(T);
+
+            if (_onItemRemoved != null)
+            {
+
+            }
+
         }
 
 
