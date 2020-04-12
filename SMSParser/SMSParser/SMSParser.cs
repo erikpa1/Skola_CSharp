@@ -22,40 +22,64 @@ namespace SMSParser
 
             if (stringToParse == String.Empty)
             {
-                Console.WriteLine("Nop parsing because of empty");
+                Console.WriteLine("Not parsing because of empty");
                 return "";
             }
 
             string concatedString = "";
+            //Dada.TralalaTraala,Dada!ahoj
+            bool nextCharIsBig = true;
+            bool misspellSpace = false;
 
-            foreach (char s in stringToParse)
+            for (int i = 0; i < stringToParse.Length; i++)
             {
-                if (concatedString.Length == 0)
+                char s = stringToParse[i];
+
+                if (Char.IsUpper(s))
                 {
-                    concatedString += s;
-                }
-                else
-                {
-                    if (Char.IsUpper(s))
+                    if (nextCharIsBig == false)
                     {
-                        concatedString += " ";
-                        concatedString += s;
-                    }
-                    else if (s == ',')
-                    {
-                        concatedString += " ";
-                        concatedString += s;
+                        if (misspellSpace == false)
+                        {
+                            concatedString += ' ';
+                        }                        
                     }
                     else
                     {
-                        concatedString += s;
+                        misspellSpace = false;
                     }
-                }           
-                               
+
+                    if (nextCharIsBig == true)
+                    {
+                        concatedString += s;
+                        nextCharIsBig = false;
+                    }
+                    else
+                    {
+                        concatedString += Char.ToLower(s);
+                    }
+                }
+                else if (s == ',')
+                {
+                    concatedString += s;
+                    concatedString += ' ';
+                    misspellSpace = true;
+                }
+                else if (s == '.' || s == '!')
+                {
+                    concatedString += s;
+                    concatedString += ' ';
+                    nextCharIsBig = true;
+                }
+                else
+                {
+                    concatedString += s;
+                }
+
             }
 
             return concatedString;
-            
+
         }
 
 
