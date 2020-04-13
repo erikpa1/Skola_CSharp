@@ -223,12 +223,46 @@ namespace Uniza.CSharp.Generics.DataStructures
 
         public void Insert(int index, T item)
         {
-            this[index] = item;
+            if (index < 0 || index >= Count)
+                throw new IndexOutOfRangeException();
+
+            DoublyLinkedNode<T> naPridanie = new DoublyLinkedNode<T>(item);
+
+            int idx = 0;
+            for (var node = _head.Next; node != _head; node = node.Next)
+            {
+                if (idx == index)
+                {
+                    node.Previous.Next = naPridanie;
+                    naPridanie.Next = node;
+                    naPridanie.Previous = node.Previous;
+
+                    Count++;
+                    return;
+                }
+
+                idx++;
+            }
         }
 
         public void RemoveAt(int index)
         {
-            this.Remove(this[index]);
+            if (index < 0 || index >= Count)
+                throw new IndexOutOfRangeException();
+
+            int idx = 0;
+            for (var node = _head.Next; node != _head; node = node.Next)
+            {
+                if (idx == index)
+                {
+                    node.Previous.Next = node.Next;
+
+                    Count--;
+                    return;
+                }
+
+                idx++;
+            }
         }
         public T this[int index]
         {

@@ -26,6 +26,8 @@ namespace Uniza.CSharp.Generics.App
 
             list[0] = "Z";
 
+            list.Insert(3, "F");
+
             int ind = list.IndexOf("E");
 
             Console.WriteLine(ind);
